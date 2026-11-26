@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aether</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<aside class="side">
+  <div class="brand">Aether</div>
+  <nav>
+    <button data-view="play" class="on">Jugar</button>
+    <button data-view="profiles">Perfiles</button>
+    <button data-view="modules">Módulos</button>
+    <button data-view="packs">Packs</button>
+    <button data-view="settings">Ajustes</button>
+  </nav>
+  <div class="ver">v0.1.0</div>
+</aside>
+<main>
+  <section id="play" class="view on">
+    <h1>Listo para jugar</h1>
+    <p id="status" class="muted">Comprobando Minecraft…</p>
+    <div class="row">
+      <select id="profileSel" aria-label="Perfil activo"></select>
+      <button id="playBtn" class="cta" disabled>Jugar</button>
+    </div>
+    <p id="msg" class="msg" role="status"></p>
+  </section>
+
+  <section id="profiles" class="view">
+    <h1>Perfiles</h1>
+    <p class="muted">Cada perfil guarda su propia combinación de módulos.</p>
+    <div class="row"><input id="newName" placeholder="Nombre del perfil" maxlength="24"><button id="addProfile">Crear perfil</button></div>
+    <ul id="profileList" class="list"></ul>
+  </section>
+
+  <section id="modules" class="view">
+    <h1>Módulos</h1>
+    <p class="muted">Perfil: <b id="modProfile"></b>. Los módulos se guardan ya; se activan dentro del juego cuando esté lista la fase 2 (add-on).</p>
+    <div id="modGrid" class="grid"></div>
+  </section>
+
+  <section id="packs" class="view">
+    <h1>Packs y texturas</h1>
+    <p class="muted">Pega la ruta de un .mcpack, .mcaddon o .mcworld. Minecraft lo instalará.</p>
+    <div class="row"><input id="packPath" placeholder="C:\Users\tu\Descargas\textura.mcpack"><button id="packBtn">Importar</button></div>
+    <p id="packMsg" class="msg" role="status"></p>
+  </section>
+
+  <section id="settings" class="view">
+    <h1>Ajustes</h1>
+    <label class="check"><input type="checkbox" id="optClose"> Cerrar el launcher al abrir el juego</label>
+    <button id="resetAll" class="ghost">Restablecer todo</button>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
